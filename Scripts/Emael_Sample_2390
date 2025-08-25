@@ -1,0 +1,24 @@
+Check Metadata with exiftool
+- exiftool sample-2390.eml
+
+Check SPF & DKIM with spf-tools and dkimpy
+- spfquery --sender sender@skyfon-varna.eu-NEW --ip 164.92.140.51
+- dkimverify < sample-2390.eml
+
+Investigate the IP & Domain
+- whois 164.92.140.51
+- whois skyfon-varna.eu
+
+DNS Resolution
+- dig A skyfon-varna.eu
+- dig mx skyfon-varna.eu
+- dig txt skyfon-varna.eu
+
+Check for Malicious Link
+- curl -I https://skyfon-varna.eu/anti/
+
+Hashing the Entire Email
+- sha256sum sample-2390.eml
+
+
+
