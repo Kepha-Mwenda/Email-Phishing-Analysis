@@ -1,0 +1,46 @@
+Phishing Email Analysis Report
+Date of Email: 2023-12-22  
+Subject: your parcel has been shipment
+Sample ID:  sample-2390.eml
+
+1. Email Header Analysis
+Sender Domain: skyfon-varna.eu 
+SPF Result: None  (Has no valid SPF or Outlook can't verify it.) 
+Relay Servers (Received chain): 
+  -164.92.140.51 (DigitalOcean server, hostname skyfon-varna.eu-NEW)  
+  -Passed through Microsoft SMTP protection (BN8NAM11FT021.mail.protection.outlook.com)  
+Suspicious Indicators: 
+  - SPF failed (no authorized sender).  
+  - Sender domain mismatched Microsoft relay.  
+  - IP not consistent with expected Outlook mail servers.  
+
+2. Email Body Analysis
+Message Theme: Fake package delivery failure.  
+Suspicious Elements:
+  - Urgency (redelivery within 48 hours & Use of Social Engineering content).  
+  - Fake Branding (Package team).  
+  - Threat of fees & return.
+  - Suspicious Comments that have MD5/SHA1 strings(Possibly markers or trackers).
+Embedded Links: 
+  - hxxps[://]skyfon-varna[.]eu/anti/ (disguised as “Review Your Package”).  
+
+3. Extracted IOCs
+ URLs:
+  - https://skyfon-varna.eu/anti/
+IP Addresses:  
+  - 164.92.140.51
+File Hashes (MD5/SHA256): 
+  -  ea3fb9221bc639881aaea8d796515fad
+  -  667e0c30688ec02ee004ef7c13e65fd9
+
+4. Threat Intelligence
+Domain Reputation: skyfon-varna.eu flagged as suspicious (likely compromised or registered for phishing).  
+IP WHOIS Info: Hosted on DigitalOcean (Netherlands).  
+
+5. Verdict
+Classification: Phishing attempt.  
+Reasoning:  
+  - SPF check failed.  
+  - Domain impersonates delivery service.  
+  - Malicious link leads to suspicious `/anti/` path. 
+- VT/urlscan.io scan results of `skyfon-varna.eu`.  
