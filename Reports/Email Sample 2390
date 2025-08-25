@@ -43,4 +43,4 @@ Reasoning:
   - SPF check failed.  
   - Domain impersonates delivery service.  
   - Malicious link leads to suspicious `/anti/` path. 
-- VT/urlscan.io scan results of `skyfon-varna.eu`.  
+- VT/urlscan.io scan results of skyfon-varna.eu.  
