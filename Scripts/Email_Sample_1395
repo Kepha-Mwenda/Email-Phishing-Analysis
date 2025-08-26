@@ -1,0 +1,13 @@
+Check Metadata with exiftool
+- exiftool sample-1395.eml
+
+Check SPF & DKIM with spf-tools and dkimpy
+- spfquery --sender fearandgreedapp.com --ip 40.107.255.120
+- grep -i "dkim=" sample-1395.eml
+
+Investigate the IP & Domain
+- whois 40.107.255.120
+- whois fearandgreedapp.com
+
+DNS Resolution
+- dig TXT fearandgreedapp.com
