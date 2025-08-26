@@ -1,0 +1,17 @@
+Check Metadata with exiftool
+- exiftool sample-3610.eml
+
+Check SPF & DKIM with spf-tools and dkimpy
+- spfquery --sender best.pharmacy.online@hotmail.com --ip 187.16.75.146
+- dkimverify < sample-3610.eml
+
+Investigate the IP & Domain
+- whois 187.16.75.146
+- whois 41.90.172.236
+- whois 5.82.149.238
+
+Extract email body and any links
+- ripmime -i sample-3610.eml -d ./output/
+
+Check for URLs
+- grep -Eo 'http[s]?://[^ "<]+' ./output/*
