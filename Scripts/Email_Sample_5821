@@ -1,0 +1,15 @@
+Check Metadata with exiftool
+- exiftool sample-5821.eml
+
+Check SPF & DKIM with spf-tools and dkimpy
+- spfquery --sender omahamobiletruckrepairservice.com --ip 162.243.75.230
+- dkimverify < sample-5821.eml
+
+Investigate the IP & Domain
+- whois 162.243.75.230
+
+Extract email body and any links
+- ripmime -i sample-5821.eml -d ./output/
+
+Check for URLs
+- grep -Eo 'http[s]?://[^ "<]+' ./output/*
