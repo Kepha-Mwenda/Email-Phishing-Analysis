@@ -1,0 +1,15 @@
+Check Metadata with exiftool
+- exiftool sample-5814.eml
+
+Check SPF & DKIM with spf-tools and dkimpy
+- spfquery --sender bonkcoinsolana@metafisicaguarani.com --ip 149.72.235.118
+- dkimverify < sample-5814.eml
+
+Investigate the IP & Domain
+- whois 149.72.235.118
+
+Extract email body and any links
+- ripmime -i sample-5814.eml -d ./output/
+
+Check for URLs
+- grep -Eo 'http[s]?://[^ "<]+' ./output/*
